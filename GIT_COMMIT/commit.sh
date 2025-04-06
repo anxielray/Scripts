@@ -32,18 +32,25 @@ DELETIONS=$(echo "$STATS" | grep -o '[0-9]* deletions' | grep -o '[0-9]*')
 COMMIT_HASH=$(git rev-parse --short HEAD)
 
 # Construct full commit message
-FULL_MESSAGE="_${COMPONENT}: ${SUMMARY}_\n\n"
-FULL_MESSAGE+="_Changes:_\n"
+FULL_MESSAGE="_${COMPONENT}: ${SUMMARY}
+\n"
+FULL_MESSAGE+="_Changes:
+"
 for CHANGE in "${CHANGES[@]}"; do
-    FULL_MESSAGE+="_- $CHANGE_\n"
+    FULL_MESSAGE+="_- $CHANGE
+    "
 done
 
-FULL_MESSAGE+="\n_Impact:_\n"
+FULL_MESSAGE+="
+Impact:"
 for IMPACT in "${IMPACTS[@]}"; do
-    FULL_MESSAGE+="_- $IMPACT_\n"
+    FULL_MESSAGE+="- $IMPACT
+    "
 done
 
-FULL_MESSAGE+="\n_${FILES_CHANGED:-0} files changed, ${INSERTIONS:-0} insertions(+), ${DELETIONS:-0} deletions(-)_\n"
+FULL_MESSAGE+="
+${FILES_CHANGED:-0} files changed, ${INSERTIONS:-0} insertions(+), ${DELETIONS:-0} deletions(-)
+"
 FULL_MESSAGE+="_🔗 Commit Hash: $COMMIT_HASH_"
 
 # Show preview
