@@ -221,19 +221,19 @@ Enter the list of impacts (type 'done' to finish):
 
 Final Commit Message Preview:
 
-```md
-_feat(math): added new geometry utils_
+```markdown
+feat(math): added new geometry utils
 
-_Changes:_
-_- Added `calculateArea` function_
-_- Updated `isTriangle` logic_
+Changes:
+- Added `calculateArea` function
+- Updated `isTriangle` logic
 
-_Impact:_
-_- Increased test coverage_
-_- Small performance gain_
+Impact:
+- Increased test coverage
+- Small performance gain
 
-_2 files changed, 24 insertions(+), 2 deletions(-)_
-_🔗 Commit Hash: ab12cd3_
+2 files changed, 24 insertions(+), 2 deletions(-)
+🔗 Commit Hash: ab12cd3
 ```
 
 ## 🧠 Pro Tips
